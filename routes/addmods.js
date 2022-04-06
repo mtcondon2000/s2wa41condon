@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   let query = req.query
   console.log('rows ${query.rows}')
-  console.log('rows ${query.cols}')
+  console.log('cols ${query.cols}')
   res.render('addmods', { title: 'Add Mods', query: query });
 });
 
