@@ -4,8 +4,9 @@ block content
   h1= title
 
   p. 
-    #{query.rows} 
+    Rows: #{query.rows} 
     #{query.cols}
+  
   - var rows = Number(query.rows)
   - var cols = Number(query.cols)
   if (Number.isInteger(rows) || Number.isInteger(rows)) {
