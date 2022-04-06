@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mydataRouter = require('./routes/mydata');
 var teslasRouter = require('./routes/teslas');
+var modRouter = require('./routes/addmods');
 
 var app = express();
 
@@ -19,6 +20,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use('/mydata', mydataRouter);
 app.use('/teslas', teslasRouter);
+app.use('/addmods', modRouter);
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
