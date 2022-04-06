@@ -2,3 +2,24 @@ extends layout
 
 block content
   h1= title
+
+  p. 
+    #{query.rows} 
+    #{query.cols}
+  - var rows = Number(query.rows)
+  - var cols = Number(query.cols)
+  if (Number.isInteger(rows) || Number.isInteger(rows)) {
+    p There is a problem
+  }
+  else if ((Number.isInteger(rows) > 10) || (Number.isInteger(rows) < 1) || (Number.isInteger(cols) > 10) || (Number.isInteger(cols) < 1)) {
+    p Numbers out of range
+  }
+  else {
+    table#outer
+      - for(let i=0; i<10; i++) {
+        tr#middle 
+          - for(let j=0; j<10; i++) {
+            td = (i + j)%i
+          }
+      }
+  }
